@@ -10,8 +10,6 @@
     width: 100%;
     background-image: url(./img/tecnologias.png);
     background-color: #191919;
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
     background-size:auto ;
     background-position: 1000px;
@@ -75,6 +73,10 @@ h1 span {
     color: white;
     font-size: 30px;
     margin-top: 5%;
+}
+
+.entre-contato {
+    text-decoration: none;
 }
 
 section {
