@@ -2,17 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Spectral SC', serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .caixa-principal {
     height: 100vh;
     width: 100%;
-    background-image: url(./img/tecnologias.png);
     background-color: #191919;
+    background-image: url(./img/novogif.webp);
     background-repeat: no-repeat;
-    background-size:auto ;
-    background-position: 1000px;
+    /* e agora a regra de ouro que fará a imagem ocupar todo o viewport */
+    background-size: 100% 100%;
+
+}
+
+.caixa-bg {
+    background-color: #0a1818;
 }
 
 nav {
@@ -21,7 +30,7 @@ nav {
     justify-content: space-between;
     padding-left: 30px;
     padding-right: 30px;
-    padding: 50px;
+    padding: 20px;
 }
 
 .portfolio {
@@ -54,26 +63,45 @@ li:hover {
 }
 
 .meu-nome {
-    position: absolute;
-    top: 50%;
-    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 
-h1 {
-    color: white;
-    font-size: 75px;
+
+.meu-nome h2 {
+    animation: blinkCursor 500ms steps(40) infinite normal, typing 4s steps(40) 1s normal both;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    
 }
 
-h1 span {
-    color: #f9004d;
+@keyframes blinkCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, 0.75)
+    }
+
+    to {
+        border-right-color: transparent;
+    }
 }
 
-.meu-nome h3 {
-    color: white;
-    font-size: 30px;
-    margin-top: 5%;
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 18em;
+    }
 }
+
+
 
 .entre-contato {
     text-decoration: none;
@@ -83,7 +111,8 @@ section {
     display: flex;
     align-items: center;
     padding: 60px 15%;
-    background-color: #000000;
+    background-color: rgba(10, 24, 24, 1);
+    border-bottom: #000000 solid 2px;
 }
 
 section img {
@@ -123,8 +152,8 @@ section div button:hover {
 }
 
 .projetos {
-    background-color: #191919;
-    padding-top: 50px;
+    background-color: rgba(10, 24, 24, 1);
+    padding-top: 150px;
     padding-bottom: 100px;
 
 }
@@ -136,14 +165,24 @@ section div button:hover {
 }
 
 .card {
-    background-color: #000000;
+    background-color: rgba(10, 24, 24, 1);
     height: 365px;
     width: 365px;
     border-radius: 20px;
     padding: 20px 35px;
     text-align: center;
     margin-bottom: 50px;
+    transition: 1s;
 
+}
+
+.card:hover {
+    border: #000000 solid 2px;
+    background-color: rgba(10, 24, 24, 0.3);
+    -webkit-box-shadow: 26px 13px 30px 4px rgba(59, 59, 59, 1);
+    -moz-box-shadow: 26px 13px 30px 4px rgba(59, 59, 59, 1);
+    box-shadow: 26px 13px 30px 4px rgba(59, 59, 59, 1);
+    transition: 0.5
 }
 
 .card img {
@@ -185,10 +224,10 @@ section div button:hover {
 
 footer {
     background-color: #000000;
-    padding-top: 100px;
-    padding-bottom: 120px;
+    padding-top: 50px;
+    padding-bottom: 70px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -198,15 +237,17 @@ footer h5 {
     font-size: 30px;
 }
 
-footer p {
+/* footer p {
     color: white;
     font-size: 18px;
     margin-top: 14px;
     margin-bottom: 30px;
-}
+} */
+
 .social {
     display: flex;
     gap: 20px;
+    margin-left: 15px;
 }
 
 .social img {
@@ -230,3 +271,4 @@ footer p {
     transform: scale(1.3);
     transition: 0.5s;
 }
+
